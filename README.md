@@ -42,7 +42,7 @@ make
 
 ```
 disassembler/
-├── src/                    # Source code files
+├── src/                   # Source code files
 │   ├── main.cpp           # Main entry point
 │   ├── elf_parser.cpp     # ELF file parsing code
 │   ├── elf_parser.h       # Header for ELF parser
@@ -50,7 +50,7 @@ disassembler/
 ├── lib/                   # External libraries
 ├── build/                 # Compiled binaries
 ├── test/                  # Test files
-│   └── test_files/       # Sample ELF files for testing
-├── CMakeLists.txt        # Build configuration
-└── README.md             # Project documentation
+│   └── test_files/        # Sample ELF files for testing
+├── CMakeLists.txt         # Build configuration
+└── README.md              # Project documentation
 ```
