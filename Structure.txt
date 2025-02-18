@@ -1,0 +1,35 @@
+disassembler/
+├── src/                   # Source code files
+│   ├── main.cpp           # Main entry point
+│   ├── elf_parser.cpp     # ELF file parsing code
+│   ├── elf_parser.h       # Header for ELF parser
+│   ├── disassembler.cpp   # Disassembly logic
+│   ├── disassembler.h     # Header for disassembler
+│   ├── output.cpp         # Output generation code
+│   └── output.h           # Header for output
+├── include/               # External library headers
+├── lib/                   # External libraries
+├── build/                 # Compiled binaries
+├── test/                  # Test files
+│   └── test_files/        # Sample ELF files for testing
+├── CMakeLists.txt         # Build configuration
+└── README.md              # Project documentation
+
+# On Ubuntu/Debian:
+sudo apt-get install build-essential cmake
+sudo apt-get install libelf-dev
+
+Input: ./program.elf
+                ↓
+1. ELF Parsing
+   program.elf → [45 4C 46...] (raw bytes)
+                ↓
+2. Disassembly
+   [45 4C 46...] → mov eax, ebx
+                   push rbp
+                   ...
+                ↓
+3. Output
+   - assembly.txt    (full disassembly)
+   - blocks.txt      (list of blocks)
+   - youroutput.txt  (your third output)
