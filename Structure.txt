@@ -32,4 +32,4 @@ Input: ./program.elf
 3. Output
    - assembly.txt    (full disassembly)
    - blocks.txt      (list of blocks)
-   - youroutput.txt  (your third output)
+   - cfg.dot  (control flow graph)
