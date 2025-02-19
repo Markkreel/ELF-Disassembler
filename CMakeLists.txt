@@ -4,12 +4,32 @@ project(disassembler)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-# Find libelf
-find_library(LIBELF_LIBRARY elf REQUIRED)
+# Find Capstone
+find_path(CAPSTONE_INCLUDE_DIR
+    NAMES capstone/capstone.h
+    PATH_SUFFIXES include
+    REQUIRED
+)
+
+find_library(CAPSTONE_LIBRARY
+    NAMES capstone
+    REQUIRED
+)
 
 add_executable(disassembler
     src/main.cpp
-    src/elf_parser.cpp
+    src/parser.cpp
+    src/disassembler.cpp
+    src/output.cpp
 )
 
-target_link_libraries(disassembler PRIVATE ${LIBELF_LIBRARY})
+# Include directories
+target_include_directories(disassembler PRIVATE
+    ${CMAKE_SOURCE_DIR}/src
+    ${CAPSTONE_INCLUDE_DIR}
+)
+
+# Link libraries
+target_link_libraries(disassembler PRIVATE
+    ${CAPSTONE_LIBRARY}
+)
