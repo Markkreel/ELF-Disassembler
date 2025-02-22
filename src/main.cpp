@@ -1,6 +1,6 @@
 // src/main.cpp
 #include <iostream>
-#include "parser.h"
+#include "elf_parser.h"
 #include "disassembler.h"
 
 int main(int argc, char* argv[]) {
